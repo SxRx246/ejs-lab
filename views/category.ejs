@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= category %></title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+    <% const capitalizedCategory = category.charAt(0).toUpperCase()+ category.slice(1)%>
+        <h1><%= capitalizedCategory %></h1>
+        <div class="menu-section">
+        <% menuItems.forEach(item=> { %>
+                <div class="menu-card">
+                <ul>
+                    <li>🍽️Name: <%= item.name %>
+                    </li>
+                    <li>💲Price: <%= item.price %>
+                    </li>
+                    <li>⭐Rating: <%= item.rating %>
+                    </li>
+                    <li>📋Details: <%= item.details %>
+                    </li>
+                </ul>
+                </div>
+            
+        <%})%>
+
+        </div>
+        
+</body>
+</html>

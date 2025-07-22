@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+        <h1>Full Menu</h1>
+        <h2>Mains</h2>
+        <div class="menu-section">
+        <% menu.forEach(item=> {
+            if (item.category === "mains") { %>
+                <div class="menu-card">
+                <ul>
+                    <li>🍽️Name: <%= item.name %>
+                    </li>
+                    <li>💲Price: <%= item.price %>
+                    </li>
+                    <li>⭐Rating: <%= item.rating %>
+                    </li>
+                    <li>📋Details: <%= item.details %>
+                    </li>
+                </ul>
+                </div>
+        <%} }) %>
+        </div>
+        <h2>Desserts</h2>
+        <div class="menu-section">
+        <% menu.forEach(item=> {
+            if(item.category === "desserts") { %>
+                <div class="menu-card">
+                <ul>
+                    <li>🍽️Name: <%= item.name %>
+                    </li>
+                    <li>💲Price: <%= item.price %>
+                    </li>
+                    <li>⭐Rating: <%= item.rating %>
+                    </li>
+                    <li>📋Details: <%= item.details %>
+                    </li>
+                </ul>
+                </div>
+            <%}}) %>
+        </div>
+
+        <h2>Sides</h2>
+        <div class="menu-section">
+
+        <% menu.forEach(item=> {
+            if (item.category === "sides") { %>
+                <div class="menu-card">
+                <ul>
+                    <li>🍽️Name: <%= item.name %>
+                    </li>
+                    <li>💲Price: <%= item.price %>
+                    </li>
+                    <li>⭐Rating: <%= item.rating %>
+                    </li>
+                    <li>📋Details: <%= item.details %>
+                    </li>
+                </ul>
+                </div>
+        <%}}) %>
+        </div>
+</body>
+
+</html>
